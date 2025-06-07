@@ -7,7 +7,7 @@ from langchain.chains import RetrievalQA
 from langchain.chat_models import ChatOpenAI
 
 # === Set your Groq API Key and base ===
-os.environ["OPENAI_API_KEY"] = "xxxxx"
+os.environ["OPENAI_API_KEY"] = "your_groq_Api_key_here"
 GROQ_API_BASE = "https://api.groq.com/openai/v1"
 
 # === Load and split CSV logs ===
