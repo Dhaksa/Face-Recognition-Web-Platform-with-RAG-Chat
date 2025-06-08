@@ -13,20 +13,30 @@ export default function App() {
     if (!name) return alert("Enter a name");
     setLog('Registering...');
     try {
-      const res = await axios.post('http://localhost:5000/api/register', { name });
+      await axios.post('http://localhost:5000/api/register', { name });
       setLog(`✅ Registered ${name}.`);
     } catch (err) {
       setLog(`❌ Error: ${err.message}`);
     }
   };
 
-  const handleRecognize = async () => {
-    setLog('Recognizing...');
+  const handleLogin = async () => {
+    setLog('Logging in...');
     try {
-      const res = await axios.post('http://localhost:5000/api/recognize');
-      setLog('✅ Recognition completed.');
+      await axios.post('http://localhost:5000/api/login');
+      setLog('✅ Login completed.');
     } catch (err) {
-      setLog(`❌ Error: ${err.message}`);
+      setLog(`❌ Login error: ${err.message}`);
+    }
+  };
+
+  const handleLogout = async () => {
+    setLog('Logging out...');
+    try {
+      await axios.post('http://localhost:5000/api/logout');
+      setLog('✅ Logout completed.');
+    } catch (err) {
+      setLog(`❌ Logout error: ${err.message}`);
     }
   };
 
@@ -60,7 +70,8 @@ export default function App() {
 
       <div className="card">
         <h2>Recognize</h2>
-        <button onClick={handleRecognize}>Recognize Face</button>
+        <button onClick={handleLogin}>Login</button>
+        <button onClick={handleLogout} style={{ marginLeft: '10px' }}>Logout</button>
       </div>
 
       <div className="card">
