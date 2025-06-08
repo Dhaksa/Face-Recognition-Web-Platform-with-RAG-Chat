@@ -1,60 +1,137 @@
-# Face-Recognition-Web-Platform-with-RAG-Chat
 
 
-A full-stack browser app for:
-- 👤 Face registration via webcam
-- 🧠 Real-time face recognition
-- 💬 RAG-powered chatbot to query logs
+# Face Recognition Web Platform with RAG Chat 
 
-## 🔧 Tech Stack
-- Frontend: React.js  
-- Backend: Node.js (API + WebSocket)  
-- AI Modules: Python (Face recognition + RAG using OpenAI)  
-- Logs: CSV/JSON/SQLite  
+A full-stack browser-based platform to:
 
-## 🚀 Setup
+* 👤 Register user faces via webcam
+* 🔍 Recognize faces in real-time
+* 💬 Query face logs with a RAG-powered chatbot (LLM-based)
 
-```bash
-git clone https://github.com/your-username/face-recognition-platform.git
-cd face-recognition-platform
-````
+---
 
-* Install dependencies in `backend`, `frontend`, and `AI-Modules`
-* Run:
+## 🧰 Tech Stack
 
-  * `npm start` in `frontend`
-  * `node index.js` in `backend`
-  * Python scripts via API: `register.py`, `recognize.py`, `rag-chat.py`
+| Layer    | Technology                      |
+| -------- | ------------------------------- |
+| Frontend | React.js                        |
+| Backend  | Node.js (API + WebSocket)       |
+| AI Layer | Python (Face Recognition + RAG) |
+| Database | SQLite / CSV logs               |
 
-## 📁 Logs
+---
 
-All events are saved in `logs.csv` with timestamp:
+## 🚀 Project Structure
 
 ```
-Name, Event, Timestamp
+Face-Recognition-Web-Platform-with-RAG-Chat/
+│
+├── AI-Modules/                 # Python scripts for AI processing
+│   ├── register.py            # Face registration
+│   ├── recognize.py           # Real-time recognition
+│   └── rag-chat.py            # Chat with logs (RAG)
+│
+├── client/                    # React.js frontend
+│   ├── public/
+│   ├── src/
+│   ├── package.json
+│   └── README.md
+│
+├── server/                    # Node.js backend
+│   ├── known_faces/           # Saved face images
+│   ├── App.js                 # API & WebSocket server
+│   ├── faces.db               # SQLite database
+│   ├── logs.csv               # CSV log storage
+│   ├── package.json
+│   └── node_modules/
+│
+├── .gitignore
+├── package-lock.json
+├── README.md                  # You’re reading this
 ```
 
-## 🏗 Architecture
+---
 
-![Architecture](./assets/architecture-diagram.png)
+## 📦 Installation & Run
+
+1. **Clone the repo**
+
+   ```bash
+   git clone https://github.com/your-username/Face-Recognition-Web-Platform-with-RAG-Chat.git
+   cd Face-Recognition-Web-Platform-with-RAG-Chat
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   cd client && npm install      # for frontend
+   cd ../server && npm install   # for backend
+   pip install -r requirements.txt  # for AI-Modules (you can create this file)
+   ```
+
+3. **Run everything**
+
+   ```bash
+   # Start frontend
+   cd client && npm start
+
+   # Start backend
+   cd ../server && node App.js
+
+   # Python scripts are auto-triggered via API (no need to run manually)
+   ```
+
+---
+
+## 🧠 Features
+
+* Face registration using webcam
+* Real-time recognition with name display and logging
+* Registration, login, logout tracked in `logs.csv`
+* Chatbot powered by LLM + FAISS vector store (RAG)
+* Log queries like:
+
+  * "Who was the last person registered?"
+  * "How many users logged out today?"
+  * "When did Dhaks log in?"
+
+---
+
+## 🗃 Sample Logs
+
+`logs.csv` (stored in `/server`):
+
+```
+Name, Action, Timestamp
+Dhaks, Registered, 2025-06-07 11:03:12
+Dhaks, Login,      2025-06-07 12:30:00
+```
+
+---
+
+## 📊 Architecture
+
+> *(Optional)* If you'd like, I can generate an architecture diagram to include here.
+
+---
 
 ## 📹 Demo
 
-🎥 [Watch Loom Demo](https://www.loom.com/share/sample-link)
-
-## 📝 Assumptions
-
-* Unique names used for face registration
-* Multi-user support on single device
-* Logs stored in CSV or SQLite
+> *(Optional)* Add Loom or YouTube demo link here.
 
 ---
 
-This project is a part of a hackathon run by [https://katomaran.com](https://katomaran.com)
+## 📝 Notes
 
-```
+* Names must be unique during registration
+* Supports multiple users on the same device
+* Logs can be stored in both CSV and SQLite
 
 ---
 
-Let me know if you want the diagram image or a GitHub repo scaffold too!
-```
+### 🎓 Built by Dhaksana N
+
+This project was developed as part of a hackathon conducted by [Katomaran](https://katomaran.com).
+
+---
+
