@@ -34,7 +34,7 @@ def log_event(name, event_type):
 # === Track currently logged-in users ===
 active_users = {}
 
-print("🟢 Webcam started. Press 'q' to quit.")
+print(" Webcam started. Press 'q' to quit.")
 known_encodings, known_names = load_known_faces()
 
 video_capture = cv2.VideoCapture(0)
@@ -42,7 +42,7 @@ video_capture = cv2.VideoCapture(0)
 while True:
     ret, frame = video_capture.read()
     if not ret:
-        print("❌ Failed to capture video.")
+        print(" Failed to capture video.")
         break
 
     small_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)
@@ -66,7 +66,7 @@ while True:
                 active_users[name] = datetime.datetime.now()
                 log_event(name, "Login")
         else:
-            print("⚠️ Unregistered user detected. Please register!")
+            print(" Unregistered user detected. Please register!")
 
         # Draw bounding box and label
         top *= 4
