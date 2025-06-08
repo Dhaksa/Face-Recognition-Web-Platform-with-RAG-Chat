@@ -111,7 +111,8 @@ Dhaks, Login,      2025-06-07 12:30:00
 
 ## 📊 Architecture
 
-> *(Optional)* If you'd like, I can generate an architecture diagram to include here.
+![image](https://github.com/user-attachments/assets/d53d077d-7b75-4891-89ca-2c624d260a0d)
+
 
 ---
 
