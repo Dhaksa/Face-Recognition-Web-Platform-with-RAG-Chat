@@ -9,7 +9,7 @@ from langchain.prompts import PromptTemplate
 from langchain.chat_models import ChatOpenAI
 
 # === Set your Groq API Key and base ===
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = "your_groq_api_key_here"
 GROQ_API_BASE = "https://api.groq.com/openai/v1"
 
 # ✅ Correct path to logs.csv
